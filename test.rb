@@ -5,7 +5,7 @@ list = [1,2,3,4,5,6,7,8,9,10]
 sda = StandardDeviationAnalyzer.new(list)
 osa = OrderStatisticAnalyzer.new(list)
 
-p sda.avg
+p sda.ave
 p sda.div
 
 p osa.median
