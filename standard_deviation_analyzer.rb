@@ -16,7 +16,7 @@ class StandardDeviationAnalyzer
 
   def div
     unless @div
-      dt = @list.inject(0){|t, v| t += (v - ave)**2}
+      dt = @list.inject(0){|t, v| t + (v - ave)**2}
       @div = sqrt(dt / size.to_f)
     end
     @div
