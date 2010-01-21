@@ -20,6 +20,11 @@ module StatisticAnalyzer
     true
   end
 
+  def total
+    @total ||= @list.inject(:+)
+    @total
+  end
+
   def max
     unless @max
       @list.reverse.each do |val|

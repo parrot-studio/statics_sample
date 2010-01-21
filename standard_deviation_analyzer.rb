@@ -10,19 +10,14 @@ class StandardDeviationAnalyzer
   end
 
   def ave
-    unless @ave
-      total = 0
-      @list.each{|val| total += val}
-      @ave = total.to_f / size.to_f
-    end
+    @ave ||= total.to_f / size.to_f
     @ave
   end
 
   def div
     unless @div
-      total = 0
-      @list.each{|val| total += (val - ave)**2}
-      @div = sqrt(total.to_f / size.to_f)
+      dt = @list.inject(0){|t, v| t += (v - ave)**2}
+      @div = sqrt(dt / size.to_f)
     end
     @div
   end
